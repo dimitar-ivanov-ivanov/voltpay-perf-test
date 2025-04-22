@@ -9,7 +9,6 @@ Relies on Kafka to be enabled, check instructions in Voltpay-Writer README
 2. ``cd ../../bin`` -> folder with scripts 
 3. [VERIFY EVENTS PRODUCED] ``kafka-console-consumer --bootstrap-server kafka1:29092 --topic write-topic --property print.key=true --property print.timestamp=true --property print.partition=true --from-beginning``
 
-
 ## How to USE 
 - Use CURL to hit the API and produce messages 
-- ``curl --location --request POST 'http://localhost:8080/api/write/X'`` where X is the amount of messages to produce
+- ``curl --location --request POST 'http://localhost:8081/api/write/X'`` where X is the amount of messages to produce

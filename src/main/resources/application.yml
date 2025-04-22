@@ -7,3 +7,6 @@ spring:
       client:
         dns:
           lookup: use_all_dns_ips
+
+server:
+  port: 8081
