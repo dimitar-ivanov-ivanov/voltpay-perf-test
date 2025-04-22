@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: voltpay-perf-test
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093
+    properties:
+      client:
+        dns:
+          lookup: use_all_dns_ips
