@@ -23,6 +23,7 @@ public class Producer {
             SecureRandom rand = new SecureRandom();
             Long custId = rand.nextLong(10);
             WriteEvent writeEvent = WriteEvent.builder()
+                    .messageId(UUID.randomUUID().toString())
                     .type("BWI")
                     .amount(new BigDecimal("123131.21"))
                     .currency("EUR")

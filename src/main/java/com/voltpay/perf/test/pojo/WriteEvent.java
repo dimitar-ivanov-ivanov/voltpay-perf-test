@@ -13,6 +13,8 @@ import java.math.BigDecimal;
 @Builder
 public class WriteEvent {
 
+    private String messageId;
+
     private BigDecimal amount;
 
     private Integer status;
