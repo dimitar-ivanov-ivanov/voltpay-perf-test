@@ -21,7 +21,7 @@ public class Producer {
 
         for (int i = 0; i < count; i++) {
             SecureRandom rand = new SecureRandom();
-            Long custId = rand.nextLong(10);
+            Long custId = rand.nextLong(99);
             WriteEvent writeEvent = WriteEvent.builder()
                     .messageId(UUID.randomUUID().toString())
                     .type("BWI")
