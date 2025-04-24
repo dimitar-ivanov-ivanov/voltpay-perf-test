@@ -11,4 +11,5 @@ Relies on Kafka to be enabled, check instructions in Voltpay-Writer README
 
 ## How to USE 
 - Use CURL to hit the API and produce messages 
-- ``curl --location --request POST 'http://localhost:8081/api/write/X'`` where X is the amount of messages to produce
+- ``curl --location --request POST 'http://localhost:28081/api/write/X'`` where X is the amount of messages to produce
+- ``curl --location --request POST 'http://localhost:28081/api/write/warmup/X'`` for warmup events, where X is the amount of messages to produce

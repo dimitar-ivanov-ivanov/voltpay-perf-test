@@ -17,8 +17,15 @@ public class WriteController {
 
     @PostMapping("/{count}")
     public ResponseEntity<String> writeEvents(@PathVariable("count") Integer count) {
-        System.out.println("Staring production of " + count + " requests at " + System.currentTimeMillis());
+        System.out.println("Staring production of " + count + " events at " + System.currentTimeMillis());
         producer.produceEvents(count);
-        return ResponseEntity.ok("Produce successfully " + count + " messages.");
+        return ResponseEntity.ok("Produce successfully " + count + " events.");
+    }
+
+    @PostMapping("/warmup/{count}")
+    public ResponseEntity<String> produceWarmUpEvents(@PathVariable("count") Integer count) {
+        System.out.println("Staring production of " + count + " warmup events at " + System.currentTimeMillis());
+        producer.produceWarmupEvents(count);
+        return ResponseEntity.ok("Produced successfully " + count + " warmup events");
     }
 }

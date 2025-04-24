@@ -18,9 +18,8 @@ public class Producer {
     private final KafkaTemplate<String, WriteEvent> kafkaTemplate;
 
     public void produceEvents(Integer count) {
-
+        SecureRandom rand = new SecureRandom();
         for (int i = 0; i < count; i++) {
-            SecureRandom rand = new SecureRandom();
             Long custId = rand.nextLong(99);
             WriteEvent writeEvent = WriteEvent.builder()
                     .messageId(UUID.randomUUID().toString())
@@ -33,6 +32,14 @@ public class Producer {
                     .build();
 
             kafkaTemplate.send("write-topic", custId.toString(), writeEvent);
+        }
+    }
+
+    public void produceWarmupEvents(Integer count) {
+        SecureRandom rand = new SecureRandom();
+        for (int i = 0; i < count; i++) {
+            Long custId = rand.nextLong(99);
+            kafkaTemplate.send("write-topic", custId.toString(), new WriteEvent());
         }
     }
 }
